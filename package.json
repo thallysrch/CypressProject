@@ -1,0 +1,32 @@
+{
+  "name": "cypress-project",
+  "version": "1.0.0",
+  "description": "Cypress tests for frontend and API — Serverest",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open --browser chrome",
+    "cypress:raw": "cypress run",
+    "cypress:raw:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.js'",
+    "cypress:raw:frontend": "cypress run --spec 'cypress/e2e/frontend/**/*.cy.js'",
+    "cypress:run": "node scripts/run-with-report.js all",
+    "cypress:run:api": "node scripts/run-with-report.js api",
+    "cypress:run:frontend": "node scripts/run-with-report.js frontend",
+    "cypress:run:report": "npm run cypress:run",
+    "report:merge": "mochawesome-merge cypress/reports/*.json -o cypress/reports/merged.json",
+    "report:generate": "npx marge cypress/reports/merged.json -f report -o cypress/reports",
+    "report:executive": "node scripts/generate-executive-report.js",
+    "report:full": "npm run cypress:run",
+    "quality:lint": "eslint cypress/**/*.js *.js scripts/**/*.js",
+    "quality:check": "npm run quality:lint"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "cypress": "^13.17.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^3.5.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
+  }
+}

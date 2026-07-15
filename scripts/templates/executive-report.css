@@ -1,0 +1,97 @@
+:root {
+  --brand-link: #464feb;
+  --border-color: #e6e6e6;
+  --header-bg: #f5f5f5;
+  --surface: #ffffff;
+  --text: #222222;
+  --muted: #6a6a6a;
+  --ok: #1f8a47;
+  --failed: #b42318;
+  --unknown: #a15c00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #fcfcfc 0%, #f7f9fc 100%);
+}
+
+a {
+  text-decoration: none;
+  color: #464feb;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(18, 29, 53, 0.06);
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.kpi {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.kpi strong {
+  display: block;
+  font-size: 26px;
+  margin-bottom: 4px;
+}
+
+.kpi small {
+  color: var(--muted);
+}
+
+tr th, tr td {
+  border: 1px solid #e6e6e6;
+}
+
+tr th {
+  background-color: #f5f5f5;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+.status-passed {
+  color: var(--ok);
+  font-weight: 600;
+}
+
+.status-failed {
+  color: var(--failed);
+  font-weight: 600;
+}
+
+.status-pending {
+  color: var(--unknown);
+  font-weight: 600;
+}
